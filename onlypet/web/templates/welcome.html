@@ -1,9 +1,15 @@
+{% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OnlyPets - Índice</title>
+    <title>{% block title %} OnlyPets - Bienvenido {% endblock %}</title>
   </head>
   <body>
-    Bienvenido!
+    {% block content %} {% if nombre_usuario %}
+    <h1 class="mt-4">Bienvenido, {{ nombre_usuario }}!</h1>
+    {% else %}
+    <h1 class="mt-4">Bienvenido cliente!</h1>
+    {% endif %} {% endblock %}
   </body>
 </html>

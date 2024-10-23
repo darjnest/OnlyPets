@@ -1,9 +1,37 @@
+{% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OnlyPets - Índice</title>
+    <title>{% block title %} OnlyPets - Acerca {% endblock %}</title>
   </head>
   <body>
-    about
+    {% block content %}
+    <h1 class="mt-4">Acerca de OnlyPets</h1>
+    <p>
+      OnlyPets es una tienda en línea dedicada a proporcionar los mejores
+      productos y servicios para tus mascotas.
+    </p>
+    <p>
+      Fundada en 2021, nuestra misión es mejorar la calidad de vida de las
+      mascotas y sus dueños, ofreciendo una amplia gama de alimentos, juguetes y
+      accesorios de alta calidad.
+    </p>
+    <p>
+      En OnlyPets creemos que cada mascota merece lo mejor. Trabajamos con
+      proveedores locales para ofrecer productos frescos y naturales que cuiden
+      la salud de tus amigos peludos.
+    </p>
+    <p>
+      Además, contamos con un equipo de expertos en cuidado de mascotas
+      disponibles para asesorarte en la elección de los productos ideales para
+      tu compañero.
+    </p>
+    <p>
+      Únete a nuestra comunidad y descubre cómo OnlyPets puede hacer que la vida
+      de tu mascota sea más feliz y saludable. ¡Visítanos y endulza la vida de
+      tu mejor amigo!
+    </p>
+    {% endblock %}
   </body>
 </html>
