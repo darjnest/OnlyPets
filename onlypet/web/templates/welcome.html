@@ -1,15 +1,26 @@
-{% extends 'base.html' %}
-
+{% extends 'base.html' %} {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <title>{% block title %} OnlyPets - Bienvenido {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   </head>
   <body>
-    {% block content %} {% if nombre_usuario %}
-    <h1 class="mt-4">Bienvenido, {{ nombre_usuario }}!</h1>
-    {% else %}
-    <h1 class="mt-4">Bienvenido cliente!</h1>
-    {% endif %} {% endblock %}
+    {% block content %}
+      <div class="card">
+        <div class="card-body text-center">
+          {% if nombre_usuario %}
+          <h1 class="card-title">Bienvenido, {{ nombre_usuario }}!</h1>
+          {% else %}
+          <h1 class="card-title">Bienvenido cliente!</h1>
+          {% endif %}
+          <p class="card-text">
+            ¡Estamos felices de tenerte aquí! Explora nuestros productos y
+            servicios diseñados especialmente para tus mascotas.
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
   </body>
 </html>
