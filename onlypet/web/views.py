@@ -12,3 +12,7 @@ def about(request):
 def welcome(request):
     context = {"nombre_usuario": "Carlos Silva"}  # O None si no hay usuario
     return render(request, "welcome.html", context)
+
+
+def ventas(request):
+    return render(request, "ventas.html")
