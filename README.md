@@ -66,7 +66,8 @@ Ejecuta el servidor de desarrollo de Django:
 ```bash
 python manage.py runserver
 Accede a la aplicación en tu navegador en http://127.0.0.1:8000/.
-Contribuciones
+
 ```
 
+Contribuciones
 Si deseas contribuir a este proyecto, por favor haz un fork del repositorio y envía un pull request con tus cambios.
