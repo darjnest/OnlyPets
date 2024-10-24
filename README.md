@@ -2,6 +2,12 @@
 
 # Proyecto OnlyPets
 
+#PROYECTO 
+## Hito 1 - Levantando tu primer proyecto Django
+## Hito 2 - Creación de un sitio web responsive con
+Bootstrap
+
+
 Este proyecto es una aplicación web de ventas enfocada en productos para mascotas, específicamente perros. Utiliza Django como framework backend y Bootstrap para el diseño frontend. A continuación, se detalla el proceso de desarrollo realizado hasta ahora.
 
 ## Requisitos
