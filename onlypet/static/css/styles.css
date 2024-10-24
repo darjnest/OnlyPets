@@ -3,6 +3,14 @@ body {
   background-color: #e9ecef;
 }
 
+.header-background {
+  background: linear-gradient(135deg, #6cb2eb, #1d72b8);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
 .header,
 .footer {
   background-color: #007bff;
