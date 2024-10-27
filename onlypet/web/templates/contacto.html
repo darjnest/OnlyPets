@@ -1,9 +1,19 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container">
-  <h1>Contacto</h1>
-  <form method="post">
-    {% csrf_token %} {{ form.as_p }}
-    <button type="submit">Enviar</button>
-  </form>
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Contáctanos</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %} {{ form.as_p }}
+            <button type="submit" class="btn btn-primary btn-block mt-3">
+              Enviar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
