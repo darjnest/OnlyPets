@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from web.forms import ContactFormForm
 from .models import pets
+from django.http import HttpResponseRedirect
 
 
 def index(request):
@@ -18,3 +20,18 @@ def welcome(request):
 
 def ventas(request):
     return render(request, "ventas.html")
+
+
+def contacto(request):
+    if request.method == "POST":
+        form = ContactFormForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/exito")
+    else:
+        form = ContactFormForm()
+    return render(request, "contacto.html", {"form": form})
+
+
+def exito(request):
+    return render(request, "exito.html")
