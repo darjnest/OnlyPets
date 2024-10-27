@@ -8,54 +8,26 @@
   </head>
   <body>
     {% block content %}
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <img
-            src="{% static 'img/perro1.webp' %}"
-            class="card-img-top img-fluid"
-            alt="Producto 1"
-            style="max-height: 200px; object-fit: cover"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Perrito 1</h5>
-            <p class="card-text">Este es un perrito salchicha.</p>
+    <div class="container">
+      <h1>Mascotas Públicos</h1>
+      <div class="row">
+        {% for pets in pets %}
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="{{ pets.image_url }}"
+              alt="{{ pets.name }}"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ pets.name }}</h5>
+              <p class="card-text">{{ pets.description }}</p>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <img
-            src="{% static 'img/perrito2.webp' %}"
-            class="card-img-top img-fluid"
-            alt="Producto 2"
-            style="max-height: 200px; object-fit: cover"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Perrito 2</h5>
-            <p class="card-text">Este es un bulldog francés.</p>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
-
-    <div class="col-md-4">
-        <div class="card mb-4">
-          <img
-            src="{% static 'img/perrito3.jpg' %}"
-            class="card-img-top img-fluid"
-            alt="Producto 2"
-            style="max-height: 200px; object-fit: cover"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Perrito 3</h5>
-            <p class="card-text">Estos son dos perritos.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
     {% endblock %}
   </body>
 </html>

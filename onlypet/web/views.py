@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from .models import pets
 
 
 def index(request):
-    return render(request, "index.html")
+    mascotas_publicos = pets.objects.filter(is_private=False)
+    return render(request, "index.html", {"pets": mascotas_publicos})
 
 
 def about(request):
@@ -10,8 +12,8 @@ def about(request):
 
 
 def welcome(request):
-    context = {"nombre_usuario": "Carlos Silva"}  # O None si no hay usuario
-    return render(request, "welcome.html", context)
+    mascotas_privados = pets.objects.filter(is_private=True)
+    return render(request, "welcome.html", {"pets": mascotas_privados})
 
 
 def ventas(request):
