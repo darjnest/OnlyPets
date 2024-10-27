@@ -7,18 +7,24 @@
   </head>
   <body>
     {% block content %}
-      <div class="card">
-        <div class="card-body text-center">
-          {% if nombre_usuario %}
-          <h1 class="card-title">Bienvenido, {{ nombre_usuario }}!</h1>
-          {% else %}
-          <h1 class="card-title">Bienvenido cliente!</h1>
-          {% endif %}
-          <p class="card-text">
-            ¡Estamos felices de tenerte aquí! Explora nuestros productos y
-            servicios diseñados especialmente para tus mascotas.
-          </p>
+    <div class="container">
+      <h1>Mascotas Privados</h1>
+      <div class="row">
+        {% for pets in pets %}
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="{{ pets.image_url }}"
+              alt="{{ pets.name }}"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ pets.name }}</h5>
+              <p class="card-text">{{ pets.description }}</p>
+            </div>
+          </div>
         </div>
+        {% endfor %}
       </div>
     </div>
     {% endblock %}
