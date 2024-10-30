@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from web.forms import ContactFormForm
 from .models import pets
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -35,3 +36,8 @@ def contacto(request):
 
 def exito(request):
     return render(request, "exito.html")
+
+
+@login_required
+def bienvenido(request):
+    return render(request, "welcome.html")
