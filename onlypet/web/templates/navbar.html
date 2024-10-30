@@ -25,13 +25,37 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'about' %}">Acerca</a>
         </li>
+
+        <!-- Solo se muestra si el usuario está autenticado -->
+        {% if user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'welcome' %}">Bienvenido</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'ventas' %}">Ventas</a>
-          <!-- Nuevo enlace -->
         </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#"
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+            >Cerrar Sesión</a
+          >
+          <form
+            id="logout-form"
+            action="{% url 'logout' %}"
+            method="POST"
+            style="display: none"
+          >
+            {% csrf_token %}
+          </form>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+        </li>
+        {% endif %}
+
         <li class="nav-item">
           <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
         </li>

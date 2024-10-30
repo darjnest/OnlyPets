@@ -9,6 +9,9 @@
     {% block content %}
     <div class="container">
       <h1>Mascotas Privados</h1>
+      <div class="alert alert-primary" role="alert">
+        Bienvenido, {{ user.username }}!
+      </div>
       <div class="row">
         {% for pets in pets %}
         <div class="col-md-4">
